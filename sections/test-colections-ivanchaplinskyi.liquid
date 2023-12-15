@@ -21,11 +21,14 @@
         {% endfor %}
       </ul>
 
+      {% if section.settings.pagination %}
+        <div class="swiper-pagination"></div>
+      {% endif %}
 
-      <div class="swiper-pagination"></div>
-
-      <div class="swiper-button-prev"></div>
-      <div class="swiper-button-next"></div>
+      {% if section.settings.navigation %}
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      {% endif %}
     </div>
   {% endif %}
 </div>
@@ -34,9 +37,9 @@
   // Use ".best-sellers__slider--section.id" to save unique settings for a section. This is necessary in cases where one section is used several times on the same page.
   new Swiper('.best-sellers__slider--{{ section.id }}', {
     speed: 400,
-    // autoplay: {
-    //   delay: 5000,
-    // },
+    autoplay: {
+      delay: 5000,
+    },
     spaceBetween: 40,
     slidesPerView: 1,
     pagination: {
@@ -119,7 +122,7 @@
       {
         "type": "range",
         "id": "range-count-sliders",
-        "min": 1,
+        "min": 3,
         "max": 6,
         "step": 1,
         "label": "t:sections.test-colections-ivanchaplinskyi.settings.count-sliders",

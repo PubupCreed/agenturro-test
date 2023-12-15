@@ -12,6 +12,8 @@
 
 .best-sellers__slider .swiper-wrapper {
     padding: 0;
+    display: flex;
+    align-items: self-end;
 }
 
 .best-sellers .swiper-pagination {
@@ -30,7 +32,6 @@
     align-items: center;
     justify-content: space-between;
     gap: 10px;
-    height: clamp(367px, 39vw, 490px);
 }
 
 .best-item__title {

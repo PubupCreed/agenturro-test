@@ -5,7 +5,6 @@ if (bestSellers.length) {
     // update cart count
     const updateCount = async () => {
         const cart = document.querySelector('.header__icon--cart');
-        console.log('cart', cart)
 
         const res = await fetch('/cart');
         const html = await res.text();
@@ -19,8 +18,9 @@ if (bestSellers.length) {
         document.querySelectorAll('form.best-item__form')?.forEach(form => {
             form.addEventListener('submit', event => {
                 event.preventDefault();
+                const target = event.target;
 
-                let formData = new FormData(event.target);
+                let formData = new FormData(target);
 
                 fetch(window.Shopify.routes.root + 'cart/add.js', {
                     method: 'POST',
@@ -29,6 +29,14 @@ if (bestSellers.length) {
                 .then(response => {
                     if (response.ok) {
                         updateCount();
+
+
+                        const btn = form.querySelector('[type="submit"]');
+                        const addToCartTxt = btn.value;
+                        const addedBtnTxt = btn.dataset.addedProduct;
+                        btn.value = addedBtnTxt;
+
+                        setTimeout(() => btn.value = addToCartTxt, 2000);
                     }
                     return response.json();
                 })

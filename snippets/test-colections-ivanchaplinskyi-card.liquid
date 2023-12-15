@@ -29,7 +29,7 @@
                 {% endfor %}
             </select>
     
-            <input type="submit" class="button" value="{{ 'products.product.add_to_cart' | t }}">
+            <input type="submit" data-added-product="{{ 'general.cart.item_added' | t }}" class="button" value="{{ 'products.product.add_to_cart' | t }}">
         {% endform %}
     {% comment %} End Product form {% endcomment %}
     {% endif %}
