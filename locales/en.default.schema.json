@@ -470,7 +470,13 @@
         "collection": "Collection",
         "product_list": "Product list",
         "header_count-sliders": "Count slider",
-        "count-sliders": "Set count sliders"
+        "count-sliders": "Set count sliders",
+        "settings": {
+          "title": "Settings",
+          "add-form": "Add form product",
+          "pagination": "Add pagination",
+          "navigation": "Add navigation"
+        }
       }
     },
     "apps": {

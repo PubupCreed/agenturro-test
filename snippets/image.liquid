@@ -1,0 +1,14 @@
+{% liquid
+    if section.index > 2
+        assign lazy = 'lazy'
+    else
+        assign lazy = 'eager'
+    endif
+%}
+
+{{
+    image
+        | image_url: width: image.width
+        | image_tag: width: image.width, height: image.height,
+        class: class, loading: lazy
+}}

@@ -1,3 +1,69 @@
+{{ 'test-colections-ivanchaplinskyi.css' | asset_url | stylesheet_tag }}
+
+{% liquid
+  if section.settings.type_product == 'products'
+    assign products = section.settings.product_list
+  else
+    assign products = section.settings.collection.products
+  endif
+%}
+
+<div class="best-sellers__container">
+  {% if section.settings.title != blank %}
+    <h2 class="best-sellers__title">{{ section.settings.title }}</h2>
+  {% endif %}
+
+  {% if products != blank %}
+    <div class="best-sellers__slider best-sellers__slider--{{ section.id }} swiper">
+      <ul class="swiper-wrapper">
+        {% for product in products %}
+          {% render 'test-colections-ivanchaplinskyi-card', product: product, section: section %}
+        {% endfor %}
+      </ul>
+
+
+      <div class="swiper-pagination"></div>
+
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+    </div>
+  {% endif %}
+</div>
+
+<script>
+  // Use ".best-sellers__slider--section.id" to save unique settings for a section. This is necessary in cases where one section is used several times on the same page.
+  new Swiper('.best-sellers__slider--{{ section.id }}', {
+    speed: 400,
+    // autoplay: {
+    //   delay: 5000,
+    // },
+    spaceBetween: 40,
+    slidesPerView: 1,
+    pagination: {
+      el: '.swiper-pagination',
+      type: 'bullets',
+      clickable: true,
+      dynamicBullets: true,
+      dynamicMainBullets: 3,
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    breakpoints: {
+      992: {
+        slidesPerView: {{ section.settings.range-count-sliders }}
+      },
+      768: {
+        slidesPerView: 2
+      }
+    }
+  });
+</script>
+
+{% if section.settings.form-product %}
+  <script src="{{ 'test-colections-ivanchaplinskyi.js' | asset_url }}" defer></script>
+{% endif %}
 
 {% schema %} 
   {
@@ -55,8 +121,31 @@
         "id": "range-count-sliders",
         "min": 1,
         "max": 6,
+        "step": 1,
         "label": "t:sections.test-colections-ivanchaplinskyi.settings.count-sliders",
         "default": 4
+      },
+      {
+        "type": "header",
+        "content": "t:sections.test-colections-ivanchaplinskyi.settings.settings.title"
+      },
+      {
+        "type": "checkbox",
+        "id": "form-product",
+        "label": "t:sections.test-colections-ivanchaplinskyi.settings.settings.add-form",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "pagination",
+        "label": "t:sections.test-colections-ivanchaplinskyi.settings.settings.pagination",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "navigation",
+        "label": "t:sections.test-colections-ivanchaplinskyi.settings.settings.navigation",
+        "default": true
       }
     ],
     "presets": [
