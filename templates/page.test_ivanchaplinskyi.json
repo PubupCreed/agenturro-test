@@ -7,14 +7,24 @@
         "padding_bottom": 28
       }
     },
-    "ce001c79-2b10-482b-950b-1576b7524e18": {
+    "f6b6c49b-3040-42f4-90d9-37dccd4024ce": {
       "type": "test-colections-ivanchaplinskyi",
       "settings": {
+        "title": "Best Sellers",
+        "type_product": "collection",
+        "collection": "automated-collection",
+        "product_list": [
+          "ax-a-451-fixierungselement",
+          "ax-a-550-50-mm-achtkant",
+          "ax-a-560-60-mm-achtkant"
+        ],
+        "range-count-sliders": 4,
+        "form-product": true
       }
     }
   },
   "order": [
     "main",
-    "ce001c79-2b10-482b-950b-1576b7524e18"
+    "f6b6c49b-3040-42f4-90d9-37dccd4024ce"
   ]
 }
