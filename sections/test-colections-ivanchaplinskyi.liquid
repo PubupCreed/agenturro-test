@@ -1,8 +1,63 @@
 
 {% schema %} 
   {
-    "name": "Test ivanchaplinskyi",
+    "name": "t:sections.test-colections-ivanchaplinskyi.name",
+    "tag": "section",
+    "class": "best-sellers",
     "settings": [
+      {
+        "type": "header",
+        "content": "t:sections.test-colections-ivanchaplinskyi.settings.header_title"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "t:sections.test-colections-ivanchaplinskyi.settings.title",
+        "default": "Best Sellers"
+      },
+      {
+        "type": "header",
+        "content": "t:sections.test-colections-ivanchaplinskyi.settings.header_products"
+      },
+      {
+        "type": "select",
+        "id": "type_product",
+        "label": "t:sections.test-colections-ivanchaplinskyi.settings.type_product",
+        "options": [
+          {
+            "value": "collection",
+            "label": "t:sections.test-colections-ivanchaplinskyi.settings.type_product-labels.collection"
+          },
+          {
+            "value": "products",
+            "label": "t:sections.test-colections-ivanchaplinskyi.settings.type_product-labels.products"
+          }
+        ],
+        "default": "collection",
+        "info": "t:sections.test-colections-ivanchaplinskyi.settings.type-product-info"
+      },
+      {
+        "type": "collection",
+        "id": "collection",
+        "label": "t:sections.test-colections-ivanchaplinskyi.settings.collection"
+      },
+      {
+        "type": "product_list",
+        "id": "product_list",
+        "label": "t:sections.test-colections-ivanchaplinskyi.settings.product_list"
+      },
+      {
+        "type": "header",
+        "content": "t:sections.test-colections-ivanchaplinskyi.settings.header_count-sliders"
+      },
+      {
+        "type": "range",
+        "id": "range-count-sliders",
+        "min": 1,
+        "max": 6,
+        "label": "t:sections.test-colections-ivanchaplinskyi.settings.count-sliders",
+        "default": 4
+      }
     ],
     "presets": [
       {
@@ -11,9 +66,3 @@
     ]
   }
 {% endschema %}
-
-{% stylesheet %}
-{% endstylesheet %}
-
-{% javascript %}
-{% endjavascript %}

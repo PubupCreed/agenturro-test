@@ -455,6 +455,24 @@
         }
       }
     },
+    "test-colections-ivanchaplinskyi": {
+      "name": "Test ivanchaplinskyi",
+      "settings": {
+        "header_title": "Title",
+        "title": "Best Sellers",
+        "header_products": "Products",
+        "type_product": "Type products",
+        "type_product-labels": {
+          "collection": "Collection",
+          "products": "Products list"
+        },
+        "type-product-info": "Select the type of products to render",
+        "collection": "Collection",
+        "product_list": "Product list",
+        "header_count-sliders": "Count slider",
+        "count-sliders": "Set count sliders"
+      }
+    },
     "apps": {
       "name": "Apps",
       "settings": {
