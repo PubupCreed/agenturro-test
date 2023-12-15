@@ -1,0 +1,12 @@
+{
+  "name": "agenturro-test",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "dev": "shopify theme dev --store agenturo-test.myshopify.com",
+    "push": "shopify theme push --store agenturo-test.myshopify.com",
+    "pull": "shopify theme pull --store agenturo-test.myshopify.com"
+  },
+  "author": "",
+  "license": "ISC"
+}

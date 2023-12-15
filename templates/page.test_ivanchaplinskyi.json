@@ -1,0 +1,20 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "ce001c79-2b10-482b-950b-1576b7524e18": {
+      "type": "test-colections-ivanchaplinskyi",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "main",
+    "ce001c79-2b10-482b-950b-1576b7524e18"
+  ]
+}
